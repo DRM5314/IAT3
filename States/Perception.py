@@ -1,7 +1,10 @@
 class Perception:
     perception = {
-        "limpio":"limpio",
-        "sucio":"sucio",
+        "limpio": "limpio",
+        "sucio": "sucio",
+        "A": "A",
+        "B": "B",
+        "termine": "termine"
     }
 
     def getPerception(self,perception):
@@ -12,4 +15,5 @@ class Perception:
             return "limpio"
 
     def showPerception(self):
-        print("\n Perceptions available: limpio, sucio")
+        print("\n Perceptions available: limpio, sucio, cuadrante-1, cuadrante-2")
+

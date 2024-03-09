@@ -3,12 +3,18 @@ from States.Rules import Rules
 from States.Perception import Perception
 from States.States import States
 from Controller.Controller import Controller
-
+from Cuadrant.Cuadrant import Cuadrant
+from DirtyEntry.DirtyEntry import DirtyEntry
 machine = RobotClean()
+
 rules = Rules()
 perceptions = Perception()
 states = States()
-machineController = Controller(machine, perceptions, rules, states)
+cuadrantA = Cuadrant("A")
+cuadrantB = Cuadrant("B")
 
-while(True):
-    machineController.run()
+dirtyEntry = DirtyEntry(cuadrantA,cuadrantB)
+machineController = Controller(machine, perceptions, rules, states, cuadrantA, cuadrantB)
+
+dirtyEntry.start()
+machineController.start()
